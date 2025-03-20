@@ -1,0 +1,72 @@
+public class Rectangle {
+    private Point topLeft;
+    private int sideA, sideB;
+
+    public Rectangle(Point topLeft,int sideA, int sideB) {
+        this.topLeft = topLeft;
+        setSideA(sideA);
+        setSideB(sideB);
+    }
+
+    public Rectangle(Point topLeft,int sideA) {
+        this.topLeft = topLeft;
+        setSideA(sideA);
+
+        setSideB(sideB);
+    }
+    public Point getTopLeft(){
+        return topLeft;
+    }
+    public void setTopLeft(Point topLeft){
+        this.topLeft = topLeft;
+    }
+    public int getSideB(){
+        return sideB;
+    }
+    public void setSideB(int SideB){
+        if(sideB<0){
+            this.sideB=0;
+            System.out.println("Side B is negative");
+        }else{
+            this.sideB = sideB;
+        }
+    }
+    public int getSideA(){
+        return sideA;
+    }
+    public int setSideA(int sideA) {
+        if (sideA < 0) {
+            System.out.println("Side B is negative");
+        }else{
+            this.sideA = sideA;
+        }
+
+
+        public int perimeter () {
+            return (2 * sideA) + (2 * sideB);
+        }
+        public int area() {
+            return sideA * sideB;
+        }
+        Rectangle r1 = new Rectangle(
+                new Point(3, 4),
+                3, 4
+        );
+
+        System.out.println(r1.getSideA());
+        System.out.println(r1.getSideB());
+        System.out.println(r1.getTopLeft().xCoord);
+        System.out.println(r1.getTopLeft().yCoord);
+        System.out.println(r1.area());
+        System.out.println(r1.perimeter());
+
+        Circle c1 = new Circle(
+                new Point(3,4),
+                5
+        );
+        System.out.println(c1.getRadius());
+        c1.setRadius(-21);
+        System.out.println(c1.getRadius());
+    }
+
+}
